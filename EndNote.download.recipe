@@ -6,6 +6,7 @@
 	<string>Downloads the current release version of EndNote.</string>
 	<key>Identifier</key>
 	<string>com.github.jbaker10.download.EndNote</string>
+	<!-- A big thanks to Allister Banks for finding the XML file with download info! -->
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
@@ -21,7 +22,6 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<!--<string>http://download.endnote.com/updates/17.0/EndNoteX74UpdateInstaller.zip</string>-->
 				<string>http://download.endnote.com/updates/17.0/EN17MacUpdates.xml</string>
 				<key>re_pattern</key>
 				<string>(/updates/17.0/EndNoteX7[0-9]UpdateInstaller.zip)</string>
