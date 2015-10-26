@@ -12,7 +12,7 @@
 		<string>EndNote</string>
 	</dict>
 	<key>ParentRecipe</key>
-	<string>com.github.jbaker10.download.EndNote</string>
+	<string>com.github.jbaker10.pkg.EndNote</string>
 	<key>MinimumVersion</key>
 	<string>0.5.0</string>
 	<key>Process</key>
