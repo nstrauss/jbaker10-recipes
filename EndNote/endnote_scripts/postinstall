@@ -37,7 +37,7 @@ def copyCWYW():
 		print "Exiting"
 
 def main():
-#	applyPatch()
+	applyPatch()
 	copyCWYW()
 
 main()
