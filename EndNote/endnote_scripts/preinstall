@@ -5,8 +5,8 @@ import os.path
 import shutil
 
 # Check if EndNote Cite While You Write is already installed
-endnote_bundle_2011 = os.path.exists("/Applications/Microsoft Office 2011/Office/Startup/Word/EndNote CWYW Word 2011.bundle")
 endnote_bundle_2008 = os.path.exists("/Applications/Microsoft Office 2008/Office/Startup/Word/EndNote CWYW Word 2008.bundle")
+endnote_bundle_2011 = os.path.exists("/Applications/Microsoft Office 2011/Office/Startup/Word/EndNote CWYW Word 2011.bundle")
 
 def check_endnote_2008():
 	# If the CWYW bundle is installed for Office 2008, then remove it

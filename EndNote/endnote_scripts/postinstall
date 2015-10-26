@@ -3,8 +3,10 @@
 import logging
 import time
 import os
+import os.path
 import sys
 import syslog
+import shutil
 import subprocess
 from subprocess import Popen
 
@@ -14,4 +16,33 @@ def bashCommand(script):
 	except (subprocess.CalledProcessError, OSError), err:
 		return "[* Error] **%s** [%s]" % (err, str(script))
 
-bashCommand(["/Applications/EndNote X7.4 Updater.app/Contents/Resources/applyPatch", "-d", "/Applications/EndNote X7", "-i", "/Applications/EndNote X7.4 Updater.app/Contents/Resources/Patchfile.patch"])
+office_2008_exists = os.path.isdir("/Applications/Microsoft Office 2008/Office/Startup/Word/")
+office_2011_exists = os.path.isdir("/Applications/Microsoft Office 2011/Office/Startup/Word/")
+
+def applyPatch():
+	bashCommand(["/Applications/EndNote X7.4 Updater.app/Contents/Resources/applyPatch", "-d", "/Applications/EndNote X7", "-i", "/Applications/EndNote X7.4 Updater.app/Contents/Resources/Patchfile.patch"])
+
+def copyCWYW():
+	if office_2008_exists:
+		print "Office 2008 is present, put CWYW in place."
+		shutil.copytree("/Applications/EndNote X7/Cite While You Write/EndNote CWYW Word 2008.bundle", "/Applications/Microsoft Office 2008/Office/Startup/Word/EndNote CWYW Word 2008.bundle")
+		bashCommand(["chown", "-R", "root:admin", "/Applications/Microsoft Office 2008/Office/Startup/Word"])
+		print "Done"
+	else:
+		print "Office 2008 is not installed on this system"
+		print "Checking for Office 2011 now"
+
+	if office_2011_exists:
+		print "Office 2011 is present, put CWYW in place."
+		shutil.copytree("/Applications/EndNote X7/Cite While You Write/EndNote CWYW Word 2011.bundle", "/Applications/Microsoft Office 2011/Office/Startup/Word/EndNote CWYW Word 2011.bundle")
+		bashCommand(["chown", "-R", "root:admin", "/Applications/Microsoft Office 2011/Office/Startup/Word"])
+		print "Done"
+	else:
+		print "Office 2011 is not installed on this system."
+		print "Exiting"
+
+def main():
+#	applyPatch()
+	copyCWYW()
+
+main()
