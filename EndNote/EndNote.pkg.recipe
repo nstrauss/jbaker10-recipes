@@ -47,6 +47,7 @@
             <dict>
                 <key>source_path</key>
                 <string>%RECIPE_CACHE_DIR%/%NAME%/EndNote X7.4 Update Installer/%app_name%</string>
+                <!-- Would like to change the destination to /var/tmp or something -->
                 <key>destination_path</key>
                 <string>%pkgroot%/Applications/%app_name%</string>
             </dict>
@@ -56,16 +57,22 @@
             <string>PkgCreator</string>
             <key>Arguments</key>
             <dict>
+                <key>force_pkg_build</key>
+                <string>true</string>
                 <key>pkg_request</key>
                 <dict>
                     <key>pkgname</key>
                     <string>%NAME%</string>
+                    <!-- Need to make the version dynamic -->
                     <key>version</key>
                     <string>17.0.0.9013</string>
+                    <!-- Would like to make the ID dynamic -->
                     <key>id</key>
                     <string>com.ThomsonResearchSoft.EndNote</string>
                     <key>options</key>
                     <string>purge_ds_store</string>
+                    <key>scripts</key>
+                    <string>endnote_scripts</string>
                     <key>chown</key>
                     <array>
                         <dict>

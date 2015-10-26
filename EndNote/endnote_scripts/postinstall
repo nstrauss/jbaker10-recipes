@@ -1,0 +1,17 @@
+#!/usr/bin/python
+
+import logging
+import time
+import os
+import sys
+import syslog
+import subprocess
+from subprocess import Popen
+
+def bashCommand(script):
+	try:
+		return subprocess.check_output(script)
+	except (subprocess.CalledProcessError, OSError), err:
+		return "[* Error] **%s** [%s]" % (err, str(script))
+
+bashCommand(["/Applications/EndNote X7.4 Updater.app/Contents/Resources/applyPatch", "-d", "/Applications/EndNote X7", "-i", "/Applications/EndNote X7.4 Updater.app/Contents/Resources/Patchfile.patch"])
