@@ -36,8 +36,12 @@ def copyCWYW():
 		print "Office 2011 is not installed on this system."
 		print "Exiting"
 
+def cleanup():
+	shutil.rmtree("/var/tmp/EndNote X7.4 Updater.app")
+
 def main():
 	applyPatch()
 	copyCWYW()
+	cleanup()
 
 main()
