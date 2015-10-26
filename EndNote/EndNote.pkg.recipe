@@ -23,7 +23,7 @@
             <key>Arguments</key>
             <dict>
                 <key>input_plist_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/EndNote X7.4 Update Installer/EndNote X7.4 Updater.app/Contents/Info.plist</string>
+                <string>%RECIPE_CACHE_DIR%/%NAME%/EndNote X7.4 Update Installer/EndNote X7.4 Updater.app/Contents/Resources/English.lproj/InfoPlist.strings</string>
             </dict>
         </dict>
         <dict>
@@ -49,7 +49,6 @@
             <dict>
                 <key>source_path</key>
                 <string>%RECIPE_CACHE_DIR%/%NAME%/EndNote X7.4 Update Installer/%app_name%</string>
-                <!-- Would like to change the destination to /var/tmp or something -->
                 <key>destination_path</key>
                 <string>%pkgroot%/var/tmp/%app_name%</string>
             </dict>
@@ -64,10 +63,7 @@
                 <key>pkg_request</key>
                 <dict>
                     <key>pkgname</key>
-                    <string>%NAME%</string>
-                    <!-- Need to make the version dynamic -->
-                    <key>version</key>
-                    <string>17.0.0.9013</string>
+                    <string>%NAME%-%version%</string>
                     <!-- Would like to make the ID dynamic -->
                     <key>id</key>
                     <string>com.ThomsonResearchSoft.EndNote</string>
