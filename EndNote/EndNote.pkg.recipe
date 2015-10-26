@@ -35,7 +35,9 @@
                 <string>%RECIPE_CACHE_DIR%/%NAME%/pkg</string>
                 <key>pkgdirs</key>
                 <dict>
-                    <key>Applications</key>
+                    <key>var</key>
+                    <string>0775</string>
+                    <key>var/tmp</key>
                     <string>0775</string>
                 </dict>
             </dict>
@@ -49,7 +51,7 @@
                 <string>%RECIPE_CACHE_DIR%/%NAME%/EndNote X7.4 Update Installer/%app_name%</string>
                 <!-- Would like to change the destination to /var/tmp or something -->
                 <key>destination_path</key>
-                <string>%pkgroot%/Applications/%app_name%</string>
+                <string>%pkgroot%/var/tmp/%app_name%</string>
             </dict>
         </dict>
         <dict>
@@ -77,7 +79,7 @@
                     <array>
                         <dict>
                             <key>path</key>
-                            <string>Applications</string>
+                            <string>var/tmp</string>
                             <key>user</key>
                             <string>root</string>
                             <key>group</key>
