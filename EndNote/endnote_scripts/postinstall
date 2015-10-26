@@ -15,7 +15,7 @@ office_2008_exists = os.path.isdir("/Applications/Microsoft Office 2008/Office/S
 office_2011_exists = os.path.isdir("/Applications/Microsoft Office 2011/Office/Startup/Word/")
 
 def applyPatch():
-	bashCommand(["/Applications/EndNote X7.4 Updater.app/Contents/Resources/applyPatch", "-d", "/Applications/EndNote X7", "-i", "/Applications/EndNote X7.4 Updater.app/Contents/Resources/Patchfile.patch"])
+	bashCommand(["/var/tmp/EndNote X7.4 Updater.app/Contents/Resources/applyPatch", "-d", "/Applications/EndNote X7", "-i", "/var/tmp/EndNote X7.4 Updater.app/Contents/Resources/Patchfile.patch"])
 
 def copyCWYW():
 	if office_2008_exists:
