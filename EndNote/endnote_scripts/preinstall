@@ -13,7 +13,7 @@ def check_endnote_2008():
 	if endnote_bundle_2008:
 		print "EndNote bundle is installed for Office 2008"
 		shutil.rmtree("/Applications/Microsoft Office 2008/Office/Startup/Word/EndNote CWYW Word 2008.bundle")
-		print "Removed the CWYW bundle form 2011"
+		print "Removed the CWYW bundle from 2011"
 	else:
 		print "EndNote bundle is not installed for Office 2008"
 		print "Checking Office 2011 now"
