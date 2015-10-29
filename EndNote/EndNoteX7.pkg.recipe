@@ -24,6 +24,8 @@
             <dict>
                 <key>dmg_path</key>
                 <string>%pathname%</string>
+                <key>dmg_path</key>
+                <string>%pathname%/%NAME%</string>
             </dict>
         </dict>
         <dict>
@@ -46,9 +48,9 @@
             <key>Arguments</key>
             <dict>
                 <key>source_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/EndNote X7 Installer/%app_name%</string>
+                <string>%pathname%/%NAME%</string>
                 <key>destination_path</key>
-                <string>%pkgroot%/Applications/%app_name%</string>
+                <string>%pkgroot%/Applications/%NAME%</string>
             </dict>
         </dict>
         <dict>
@@ -56,12 +58,14 @@
             <string>PkgCreator</string>
             <key>Arguments</key>
             <dict>
-                <key>force_pkg_build</key>
-                <string>true</string>
                 <key>pkg_request</key>
                 <dict>
                     <key>pkgname</key>
                     <string>%NAME%-%version%</string>
+                    <key>version</key>
+                    <string>%version%</string>
+                    <key>id</key>
+                    <string>%bundleid%</string>
                     <key>options</key>
                     <string>purge_ds_store</string>
                     <key>chown</key>
