@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Creates an Absolute Manage package (.amsdpackages) of Acronis Access, imports it into the Absolute Manage Admin console and uploads it to the Absolute Manage Server.</string>
+	<string>Creates an Absolute Manage package (.amsdpackages) of Acronis Access, imports it into the Absolute Manage Admin console, and uploads it to the Absolute Manage Server.</string>
 	<key>Identifier</key>
 	<string>com.github.jbaker10.absolute.AcronisAccess</string>
 	<key>Input</key>

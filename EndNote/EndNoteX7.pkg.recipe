@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest version of EndNote and builds a package.</string>
+    <string>Downloads the latest full installer of EndNote X7 and builds an Apple installer pkg.</string>
     <key>Identifier</key>
     <string>com.github.jbaker10.pkg.EndNoteX7</string>
     <key>Input</key>

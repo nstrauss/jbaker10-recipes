@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest version of EndNote and builds a package.</string>
+    <string>Downloads the latest EndNote X7 release, unzips the contents, and creates a custom package that will install the EndNote X7 update onto the system. It will also place the CWYW module into the Startup items of Office 2008 and/or 2011.</string>
     <key>Identifier</key>
     <string>com.github.jbaker10.pkg.EndNoteX7Updates</string>
     <key>Input</key>

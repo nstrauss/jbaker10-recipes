@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest version of Acronis Access</string>
+    <string>Downloads the latest version of Acronis Access and unzips the contents.</string>
     <key>Identifier</key>
     <string>com.github.jbaker10.download.AcronisAccess</string>
     <key>Input</key>

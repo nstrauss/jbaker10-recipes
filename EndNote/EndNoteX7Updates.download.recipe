@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the current release version of EndNote.</string>
+	<string>Downloads the latest EndNote X7 release and unzips the contents.</string>
 	<key>Identifier</key>
 	<string>com.github.jbaker10.download.EndNoteX7Updates</string>
 	<!-- A big thanks to Allister Banks for finding the XML file with download info! -->
