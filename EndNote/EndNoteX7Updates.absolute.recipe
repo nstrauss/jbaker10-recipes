@@ -34,6 +34,8 @@
 				<string>~(OSX) </string>
 				<key>import_abman_to_servercenter</key>
 				<true/>
+				<key>installation_condition_name</key>
+				<string>EndNote X7.app</string>
 			</dict>
 			<key>SharedProcessorRepoURL</key>
 			<string>https://github.com/tburgin/AbsoluteManageExport</string>
