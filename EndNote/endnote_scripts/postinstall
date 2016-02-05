@@ -13,7 +13,7 @@ def bashCommand(script):
 
 office_2008_exists = os.path.isdir("/Applications/Microsoft Office 2008/Office/Startup/Word/")
 office_2011_exists = os.path.isdir("/Applications/Microsoft Office 2011/Office/Startup/Word/")
-office_2016_exists = os.path.isdir("/Library/Application Support/Microsoft/Office365/User Content.localized/Startup.localized/Word/")
+office_2016_exists = os.path.isdir("/Applications/Microsoft Word.app")
 
 
 def applyPatch():
