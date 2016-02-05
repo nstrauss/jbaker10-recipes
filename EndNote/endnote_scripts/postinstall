@@ -13,15 +13,17 @@ def bashCommand(script):
 
 office_2008_exists = os.path.isdir("/Applications/Microsoft Office 2008/Office/Startup/Word/")
 office_2011_exists = os.path.isdir("/Applications/Microsoft Office 2011/Office/Startup/Word/")
+office_2016_exists = os.path.isdir("/Library/Application Support/Microsoft/Office365/User Content.localized/Startup.localized/Word/")
+
 
 def applyPatch():
-	bashCommand(["/var/tmp/EndNote X7.4 Updater.app/Contents/Resources/applyPatch", "-d", "/Applications/EndNote X7", "-i", "/var/tmp/EndNote X7.4 Updater.app/Contents/Resources/Patchfile.patch"])
+	bashCommand(["/var/tmp/EndNote X7.5 Updater.app/Contents/Resources/applyPatch", "-d", "/Applications/EndNote X7", "-i", "/var/tmp/EndNote X7.5 Updater.app/Contents/Resources/Patchfile.patch"])
 
 def copyCWYW():
 	if office_2008_exists:
 		print "Office 2008 is present, put CWYW in place."
 		shutil.copytree("/Applications/EndNote X7/Cite While You Write/EndNote CWYW Word 2008.bundle", "/Applications/Microsoft Office 2008/Office/Startup/Word/EndNote CWYW Word 2008.bundle")
-		bashCommand(["chown", "-R", "root:admin", "/Applications/Microsoft Office 2008/Office/Startup/Word"])
+		bashCommand(["/usr/sbin/chown", "-R", "root:admin", "/Applications/Microsoft Office 2008/Office/Startup/Word"])
 		print "Done"
 	else:
 		print "Office 2008 is not installed on this system"
@@ -30,14 +32,22 @@ def copyCWYW():
 	if office_2011_exists:
 		print "Office 2011 is present, put CWYW in place."
 		shutil.copytree("/Applications/EndNote X7/Cite While You Write/EndNote CWYW Word 2011.bundle", "/Applications/Microsoft Office 2011/Office/Startup/Word/EndNote CWYW Word 2011.bundle")
-		bashCommand(["chown", "-R", "root:admin", "/Applications/Microsoft Office 2011/Office/Startup/Word"])
+		bashCommand(["/usr/sbin/chown", "-R", "root:admin", "/Applications/Microsoft Office 2011/Office/Startup/Word"])
 		print "Done"
 	else:
 		print "Office 2011 is not installed on this system."
+		print "Checking for Office 2016 now"
+	if office_2016_exists:
+		print "Office 2016 is present, put CWYW in place."
+		shutil.copytree("/Applications/EndNote X7/Cite While You Write/EndNote CWYW Word 2016.bundle", "/Library/Application Support/Microsoft/Office365/User Content.localized/Startup.localized/Word/EndNote CWYW Word 2016.bundle")
+		bashCommand(["/usr/sbin/chown", "-R", "root:admin", "//Library/Application Support/Microsoft/Office365/User Content.localized/Startup.localized/Word/EndNote CWYW Word 2016.bundle"])
+		print "Done"
+	else:
+		print "Office 2016 is not installed on this system."
 		print "Exiting"
 
 def cleanup():
-	shutil.rmtree("/var/tmp/EndNote X7.4 Updater.app")
+	shutil.rmtree("/var/tmp/EndNote X7.5 Updater.app")
 
 def main():
 	applyPatch()
