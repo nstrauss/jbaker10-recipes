@@ -26,7 +26,7 @@
 				<key>url</key>
 				<string>http://download.endnote.com/updates/17.0/EN17MacUpdates.xml</string>
 				<key>re_pattern</key>
-				<string>(/updates/17.0/EndNoteX7[0-9]UpdateInstaller.zip)</string>
+				<string>(/updates/17.0/EndNoteX7[0-9]*UpdateInstaller.zip)</string>
 			</dict>
 		</dict>
 		<dict>
