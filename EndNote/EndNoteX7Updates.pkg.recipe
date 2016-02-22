@@ -11,7 +11,7 @@
         <key>NAME</key>
         <string>EndNote</string>
         <key>app_name</key>
-        <string>EndNote X7.5 Updater.app</string>
+        <string>EndNote X7.5.1.1 Updater.app</string>
     </dict>
     <key>ParentRecipe</key>
     <string>com.github.jbaker10.download.EndNoteX7Updates</string>
