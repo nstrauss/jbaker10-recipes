@@ -3,23 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Creates an Absolute Manage package (.amsdpackages) of Acronis Access, imports it into the Absolute Manage Admin console, and uploads it to the Absolute Manage Server.</string>
+	<string>Creates a LANrev package (.amsdpackages) of EndNote Updates, imports it into the LANrev Admin console and uploads it to the LANrev Server.</string>
 	<key>Identifier</key>
-	<string>com.github.jbaker10.absolute.AcronisAccess</string>
+	<string>com.github.jbaker10.lanrev.EndNoteX7Updates</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>AcronisAccess</string>
+		<string>EndNote</string>
 	</dict>
 	<key>ParentRecipe</key>
-	<string>com.github.jbaker10.pkg.AcronisAccess</string>
+	<string>com.github.jbaker10.pkg.EndNoteX7Updates</string>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>0.5.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Processor</key>
-			<string>com.github.tburgin.AbsoluteManageExport/AbsoluteManageExport</string>
+			<string>com.github.jbaker10.LANrevImporter/LANrevImporter</string>
 			<key>Arguments</key>
 			<dict>
 				<key>dest_payload_path</key>
@@ -32,11 +32,13 @@
 				<string>(OSX AutoPkg) </string>
 				<key>payload_name_prefix</key>
 				<string>~(OSX) </string>
-				<key>import_abman_to_servercenter</key>
+				<key>import_pkg_to_servercenter</key>
 				<true/>
+				<key>installation_condition_name</key>
+				<string>EndNote X7.app</string>
 			</dict>
 			<key>SharedProcessorRepoURL</key>
-			<string>https://github.com/tburgin/AbsoluteManageExport</string>
+			<string>https://github.com/jbaker10/LANrevImporter</string>
 		</dict>
 	</array>
 </dict>
