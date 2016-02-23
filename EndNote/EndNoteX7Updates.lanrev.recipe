@@ -37,8 +37,6 @@
 				<key>installation_condition_name</key>
 				<string>EndNote X7.app</string>
 			</dict>
-			<key>SharedProcessorRepoURL</key>
-			<string>https://github.com/jbaker10/LANrevImporter</string>
 		</dict>
 	</array>
 </dict>

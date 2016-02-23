@@ -35,8 +35,6 @@
 				<key>import_pkg_to_servercenter</key>
 				<true/>
 			</dict>
-			<key>SharedProcessorRepoURL</key>
-			<string>https://github.com/jbaker10/LANrevImporter</string>
 		</dict>
 	</array>
 </dict>
