@@ -17,7 +17,7 @@ office_2016_exists = os.path.isdir("/Applications/Microsoft Word.app")
 
 
 def applyPatch():
-	bashCommand(["/var/tmp/EndNote X7.5 Updater.app/Contents/Resources/applyPatch", "-d", "/Applications/EndNote X7", "-i", "/var/tmp/EndNote X7.5 Updater.app/Contents/Resources/Patchfile.patch"])
+	bashCommand(["/var/tmp/EndNote X7.5.1.1 Updater.app/Contents/Resources/applyPatch", "-d", "/Applications/EndNote X7", "-i", "/var/tmp/EndNote X7.5.1.1 Updater.app/Contents/Resources/Patchfile.patch"])
 
 def copyCWYW():
 	if office_2008_exists:
@@ -47,7 +47,7 @@ def copyCWYW():
 		print "Exiting"
 
 def cleanup():
-	shutil.rmtree("/var/tmp/EndNote X7.5 Updater.app")
+	shutil.rmtree("/var/tmp/EndNote X7.5.1.1 Updater.app")
 
 def main():
 	applyPatch()
