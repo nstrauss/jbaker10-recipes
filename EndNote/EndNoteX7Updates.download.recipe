@@ -63,7 +63,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/EndNote X7.5.1.1 Update Installer/EndNote X7.5.1.1 Updater.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/EndNote X7.5.3 Update Installer/EndNote X7.5.3 Updater.app</string>
 				<key>requirement</key>
 				<string>anchor trusted</string>
 			</dict>
