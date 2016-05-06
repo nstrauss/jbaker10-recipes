@@ -14,7 +14,7 @@
 		<string>latest</string>
 	</dict>
 	<key>ParentRecipe</key>
-	<string>com.github.keeleysam.recipes.osquery.download</string>
+	<string>com.github.jbaker10.download.osquery</string>
 	<key>MinimumVersion</key>
 	<string>0.5.0</string>
 	<key>Process</key>
