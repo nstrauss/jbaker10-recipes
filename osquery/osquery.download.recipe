@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Description</key>
+	<string>Downloads the latest osquery installer .pkg from the osquery.io/downloads page</string>
 	<key>Identifier</key>
 	<string>com.github.jbaker10.download.osquery</string>
 	<key>Input</key>
