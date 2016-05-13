@@ -12,7 +12,7 @@
         <string>scmccid</string>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.2.0</string>
+    <string>0.4.0</string>
     <key>Process</key>
     <array>
         <dict>
@@ -23,7 +23,7 @@
                 <key>url</key>
                 <string>http://support.identive-group.com/downloads.php</string>
                 <key>re_pattern</key>
-                <string>scmccid_mac_5.0.[0-9][0-9].zip</string>
+                <string>scmccid_mac_[0-9].[0-9].[0-9][0-9]</string>
             </dict>
         </dict>
         <dict>
@@ -31,10 +31,8 @@
             <string>URLDownloader</string>
             <key>Arguments</key>
             <dict>
-                <key>filename</key>
-                <string>%match%</string>
                 <key>url</key>
-                <string>http://support.identive-group.com/download.php?ref=support&amp;file=driver/%match%</string>
+                <string>http://support.identive-group.com/download.php?ref=support&amp;file=driver/%match%.zip</string>
             </dict>
         </dict>
         <dict>
@@ -49,9 +47,40 @@
                 <key>archive_path</key>
                 <string>%pathname%</string>
                 <key>destination_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%</string>
+                <string>%RECIPE_CACHE_DIR%/zip</string>
                 <key>purge_destination</key>
                 <true/>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>PkgCopier</string>
+            <key>Arguments</key>
+            <dict>
+                <key>source_pkg</key>
+                <string>%RECIPE_CACHE_DIR%/zip/*/*.pkg</string>
+                <key>pkg_path</key>
+                <string>%RECIPE_CACHE_DIR%/pkg/scmccid.pkg</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>Versioner</string>
+            <key>Arguments</key>
+            <dict>
+                <key>input_plist_path</key>
+                <string>%pkg_path%/Contents/Info.plist</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>Copier</string>
+            <key>Arguments</key>
+            <dict>
+                <key>source_path</key>
+                <string>%pkg_path%</string>
+                <key>destination_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
             </dict>
         </dict>
     </array>

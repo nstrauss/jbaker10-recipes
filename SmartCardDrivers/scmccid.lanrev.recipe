@@ -9,7 +9,7 @@
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>scmccid/string>
+		<string>scmccid</string>
 		<key>version</key>
 		<string>latest</string>
 	</dict>
@@ -29,7 +29,7 @@
 				<key>sdpackages_ampkgprops_path</key>
 				<string>%RECIPE_DIR%/%NAME%-Defaults.ampkgprops</string>
 				<key>source_payload_path</key>
-				<string>%pathname%</string>
+				<string>%destination_path%</string>
 				<key>sd_name_prefix</key>
 				<string>(OSX AutoPkg) </string>
 				<key>payload_name_prefix</key>
