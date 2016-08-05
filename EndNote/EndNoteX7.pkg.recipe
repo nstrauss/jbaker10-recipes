@@ -13,6 +13,8 @@
     <key>PKG_ID</key>
     <string>com.company.EndNote</string>
   </dict>
+  <key>MinimumVersion</key>
+  <string>0.6.1</string>
   <key>ParentRecipe</key>
   <string>com.github.jbaker10.download.EndNoteX7</string>
   <key>Process</key>
