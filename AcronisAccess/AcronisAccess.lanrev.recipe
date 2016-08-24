@@ -34,6 +34,8 @@
 				<string>~(OSX) </string>
 				<key>import_pkg_to_servercenter</key>
 				<true/>
+				<key>add_s_to_availability_date</key>
+				<string>86400</string>
 			</dict>
 		</dict>
 	</array>
