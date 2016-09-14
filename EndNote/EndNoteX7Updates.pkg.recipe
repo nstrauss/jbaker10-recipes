@@ -10,8 +10,6 @@
     <dict>
         <key>NAME</key>
         <string>EndNote</string>
-        <key>app_name</key>
-        <string>EndNote X7.5.3 Updater.app</string>
     </dict>
     <key>ParentRecipe</key>
     <string>com.github.jbaker10.download.EndNoteX7Updates</string>
@@ -19,11 +17,20 @@
     <array>
         <dict>
             <key>Processor</key>
+            <string>FileFinder</string>
+            <key>Arguments</key>
+            <dict>
+                <key>pattern</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%/*/*.app</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
             <string>Versioner</string>
             <key>Arguments</key>
             <dict>
                 <key>input_plist_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/EndNote X7.5.3 Update Installer/EndNote X7.5.3 Updater.app/Contents/Resources/English.lproj/InfoPlist.strings</string>
+                <string>%found_filename%/Contents/Resources/English.lproj/InfoPlist.strings</string>
             </dict>
         </dict>
         <dict>
@@ -48,9 +55,9 @@
             <key>Arguments</key>
             <dict>
                 <key>source_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/EndNote X7.5.3 Update Installer/%app_name%</string>
+                <string>%found_filename%</string>
                 <key>destination_path</key>
-                <string>%pkgroot%/var/tmp/%app_name%</string>
+                <string>%pkgroot%/var/tmp/EndNoteUpdater.app</string>
             </dict>
         </dict>
         <dict>

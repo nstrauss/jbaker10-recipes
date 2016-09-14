@@ -2,49 +2,47 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Description</key>
-	<string>Downloads the latest full installer of EndNote X7.</string>
-	<key>Identifier</key>
-	<string>com.github.jbaker10.download.EndNoteX7</string>
-	<key>Input</key>
-	<dict>
-		<key>NAME</key>
-		<string>EndNote X7</string>
-		<key>version</key>
-		<string>latest</string>
-		<key>DOWNLOAD_URL</key>
-		<string>http://download.endnote.com/downloads/X7/EndNoteX7Installer.dmg</string>
-	</dict>
-	<key>MinimumVersion</key>
-	<string>0.5.0</string>
-	<key>Process</key>
-	<array>
-		<dict>
-			<key>Processor</key>
-			<string>URLDownloader</string>
-			<key>Arguments</key>
-			<dict>
-				<key>filename</key>
-				<string>%NAME%.dmg</string>
-				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>EndOfCheckPhase</string>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>CodeSignatureVerifier</string>
-			<key>Arguments</key>
-			<dict>
-				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg/%NAME%/EndNote X7.app</string>
-				<key>requirement</key>
-				<string>anchor trusted</string>
-			</dict>
-		</dict>
-	</array>
+  <key>Description</key>
+  <string>Downloads the latest full installer of EndNote X7.</string>
+  <key>Identifier</key>
+  <string>com.github.jbaker10.download.EndNoteX7</string>
+  <key>Input</key>
+  <dict>
+    <key>NAME</key>
+    <string>EndNote_X7</string>
+    <key>DOWNLOAD_URL</key>
+    <string>http://download.endnote.com/downloads/X7/EndNoteX7Installer.dmg</string>
+  </dict>
+  <key>MinimumVersion</key>
+  <string>0.6.1</string>
+  <key>Process</key>
+  <array>
+    <dict>
+      <key>Processor</key>
+      <string>URLDownloader</string>
+      <key>Arguments</key>
+      <dict>
+        <key>url</key>
+        <string>%DOWNLOAD_URL%</string>
+        <key>CHECK_FILESIZE_ONLY</key>
+        <true/>
+      </dict>
+    </dict>
+    <dict>
+      <key>Processor</key>
+      <string>EndOfCheckPhase</string>
+    </dict>
+    <dict>
+      <key>Processor</key>
+      <string>CodeSignatureVerifier</string>
+      <key>Arguments</key>
+      <dict>
+        <key>input_path</key>
+        <string>%pathname%/EndNote X7/EndNote X7.app</string>
+        <key>requirement</key>
+        <string>anchor trusted</string>
+      </dict>
+    </dict>
+  </array>
 </dict>
 </plist>

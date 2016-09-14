@@ -3,18 +3,18 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Creates a LANrev package (.amsdpackages) of Acronis Access, imports it into the LANrev Admin console, and uploads it to the LANrev Server.</string>
+	<string>Creates a LANrev package (.amsdpackages) of the Box Sync application, imports it into the LANrev Admin console, and uploads it to the LANrev Server.</string>
 	<key>Identifier</key>
-	<string>com.github.jbaker10.lanrev.AcronisAccess</string>
+	<string>com.github.jbaker10.lanrev.BoxSync</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>AcronisAccess</string>
+		<string>Box Sync</string>
 	</dict>
 	<key>ParentRecipe</key>
-	<string>com.github.jbaker10.pkg.AcronisAccess</string>
+	<string>com.github.hansen-m.pkg.boxsync</string>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>0.4.1</string>
 	<key>Process</key>
 	<array>
 		<dict>

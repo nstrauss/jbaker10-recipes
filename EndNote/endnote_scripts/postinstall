@@ -4,6 +4,7 @@ import os
 import os.path
 import shutil
 import subprocess
+import glob
 
 def bashCommand(script):
 	try:
@@ -15,9 +16,10 @@ office_2008_exists = os.path.isdir("/Applications/Microsoft Office 2008/Office/S
 office_2011_exists = os.path.isdir("/Applications/Microsoft Office 2011/Office/Startup/Word/")
 office_2016_exists = os.path.isdir("/Applications/Microsoft Word.app")
 
+installer_app = "EndNoteUpdater.app"
 
 def applyPatch():
-	bashCommand(["/var/tmp/EndNote X7.5.3 Updater.app/Contents/Resources/applyPatch", "-d", "/Applications/EndNote X7", "-i", "/var/tmp/EndNote X7.5.3 Updater.app/Contents/Resources/Patchfile.patch"])
+	bashCommand(["/var/tmp/%s/Contents/Resources/applyPatch" % installer_app, "-d", "/Applications/EndNote X7", "-i", "/var/tmp/%s/Contents/Resources/Patchfile.patch" % installer_app])
 
 def copyCWYW():
 	if office_2008_exists:
@@ -47,7 +49,7 @@ def copyCWYW():
 		print "Exiting"
 
 def cleanup():
-	shutil.rmtree("/var/tmp/EndNote X7.5.3 Updater.app")
+	shutil.rmtree("/var/tmp/%s" % installer_app)
 
 def main():
 	applyPatch()
