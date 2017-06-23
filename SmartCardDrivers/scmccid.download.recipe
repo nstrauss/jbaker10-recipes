@@ -15,24 +15,24 @@
     <string>0.4.0</string>
     <key>Process</key>
     <array>
-<!--         <dict>
+        <dict>
             <key>Processor</key>
             <string>URLTextSearcher</string>
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>http://support.identiv.com/smartfold-scr3500/</string>
+                <string>http://support.identive-group.com/downloads.php</string>
                 <key>re_pattern</key>
                 <string>scmccid_mac_[0-9].[0-9].[0-9][0-9]</string>
             </dict>
-        </dict> -->
+        </dict>
         <dict>
             <key>Processor</key>
             <string>URLDownloader</string>
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>http://files.identiv.com/products/smart-card-readers/common-drivers/uTrust_MAC_Driver.zip</string>
+                <string>http://support.identive-group.com/download.php?ref=support&amp;file=driver/%match%.zip</string>
             </dict>
         </dict>
         <dict>
@@ -50,28 +50,6 @@
                 <string>%RECIPE_CACHE_DIR%/zip</string>
                 <key>purge_destination</key>
                 <true/>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>FileFinder</string>
-            <key>Arguments</key>
-            <dict>
-                <key>pattern</key>
-                <string>%destination_path%/*/*.zip</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>Unarchiver</string>
-            <key>Arguments</key>
-            <dict>
-                <key>archive_path</key>
-                <string>%found_filename%</string>
-                <key>destination_path</key>
-                <string>%RECIPE_CACHE_DIR%/zip</string>
-                <key>purge_destination</key>
-                <false/>
             </dict>
         </dict>
         <dict>
