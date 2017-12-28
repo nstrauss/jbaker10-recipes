@@ -20,8 +20,12 @@
             <array>
                 <string>testing</string>
             </array>
+            <key>category</key>
+            <string>Productivity</string>
             <key>description</key>
             <string>Acronis Access Advanced is an easy, complete, and secure enterprise file sharing solution that makes users more productive and gives IT complete control over business content to ensure security, maintain compliance, and enable BYOD. Employees can use any device to securely access, sync and share files with other employees, customers, partners, and vendors.</string>
+            <key>developer</key>
+            <string>Acronis International GmbH</string>
             <key>display_name</key>
             <string>Acronis Access</string>
             <key>name</key>
