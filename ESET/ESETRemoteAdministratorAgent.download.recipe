@@ -41,7 +41,7 @@
                 <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg/*.pkg</string>
                 <key>expected_authority_names</key>
                 <array>
-                    <string>Developer ID Installer: ESET, spol. s r.o.</string>
+                    <string>Developer ID Installer: ESET, spol. s r.o. (P8DQRXPVLP)</string>
                     <string>Developer ID Certification Authority</string>
                     <string>Apple Root CA</string>
                 </array>
