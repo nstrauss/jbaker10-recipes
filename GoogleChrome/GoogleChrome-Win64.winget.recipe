@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads latest Google Chrome x64 MSI for Windows and adds to generates a winget manifest</string>
+    <key>Identifier</key>
+    <string>com.github.jbaker10.winget.GoogleChrome-Win64</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>GoogleChrome x64</string>
+        <key>PUBLISHER</key>
+        <string>Google</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.4.0</string>
+    <key>ParentRecipe</key>
+    <string>com.github.hansen-m.download.googlechrome-Win64</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>destination_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%-%version%.msi</string>
+                <key>overwrite</key>
+                <string>true</string>
+                <key>source_path</key>
+                <string>%pathname%</string>
+            </dict>
+            <key>Processor</key>
+            <string>Copier</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>dest_payload_path</key>
+                <string>/Users/jeremy.baker/Dev/winget/manifests/%PUBLISHER%/%NAME%/%version%.yaml</string>
+                <key>application_name</key>
+                <string>%NAME%</string>
+                <key>package_id</key>
+                <string>%PUBLISHER%.%NAME%</string>
+                <key>publisher</key>
+                <string>%PUBLISHER%</string>
+                <key>version</key>
+                <string>%version%</string>
+                <key>license_type</key>
+                <string>Proprietary freeware, based on open source components</string>
+                <key>license_url</key>
+                <string>https://www.google.com/chrome/terms/</string>
+                <key>description</key>
+                <string>A fast, secure, and free web browser built for the modern web. Chrome syncs bookmarks across all your devices, fills out forms automatically, and so much more.</string>
+                <key>homepage</key>
+                <string>https://www.google.com/chrome/</string>
+                <key>installer_type</key>
+                <string>msi</string>
+                <key>installers</key>
+                <array>
+                    <dict>
+                        <key>architecture</key>
+                        <string>x64</string>
+                        <key>download_url</key>
+                        <string>%DOWNLOAD_URL%</string>
+                    </dict>
+                </array>
+            </dict>
+            <key>Processor</key>
+            <string>com.github.jbaker10.WingetYamlGenerator/WingetYamlGenerator</string>
+        </dict>
+    </array>
+</dict>
+</plist>
