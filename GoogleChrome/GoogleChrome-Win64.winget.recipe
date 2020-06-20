@@ -9,7 +9,7 @@
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>GoogleChrome x64</string>
+        <string>GoogleChrome</string>
         <key>PUBLISHER</key>
         <string>Google</string>
     </dict>
@@ -35,8 +35,10 @@
         <dict>
             <key>Arguments</key>
             <dict>
-                <key>dest_payload_path</key>
-                <string>/Users/jeremy.baker/Dev/winget/manifests/%PUBLISHER%/%NAME%/%version%.yaml</string>
+                <key>manifest_output_path</key>
+                <string>/Users/Shared/winget/manifests/%PUBLISHER%/%NAME%</string>
+                <key>manifest_output_filename</key>
+                <string>%version%.yaml</string>
                 <key>application_name</key>
                 <string>%NAME%</string>
                 <key>package_id</key>
@@ -55,6 +57,8 @@
                 <string>https://www.google.com/chrome/</string>
                 <key>installer_type</key>
                 <string>msi</string>
+                <key>app_moniker</key>
+                <string>chrome</string>
                 <key>installers</key>
                 <array>
                     <dict>
@@ -66,7 +70,7 @@
                 </array>
             </dict>
             <key>Processor</key>
-            <string>com.github.jbaker10.WingetYamlGenerator/WingetYamlGenerator</string>
+            <string>com.github.jbaker10.WingetManifestGenerator/WingetManifestGenerator</string>
         </dict>
     </array>
 </dict>
