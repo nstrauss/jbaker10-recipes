@@ -83,6 +83,18 @@ class WingetManifestGenerator(Processor):
                     "description": "A set of install command line switches that should be used",
                     "required": False,
                 },
+                "scope": {
+                    "description": "The installation context. Supported scopes: user, device",
+                    "required": False,
+                },
+                "switches": {
+                    "description": "List of installation switches to be passed when the installer is called",
+                    "required": False,
+                },
+                "language": {
+                    "description": "The language locale setting for the install (i.e. en-US)",
+                    "required": False,
+                },
             },
         },
         "license_type": {
@@ -107,6 +119,10 @@ class WingetManifestGenerator(Processor):
         },
         "description": {
             "description": "A description of the application",
+            "required": False,
+        },
+        "switches": {
+            "description": "List of installation switches to be passed when the installer is called at the root level",
             "required": False,
         },
     }
