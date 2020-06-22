@@ -64,7 +64,7 @@ class WingetManifestGenerator(Processor):
         "publisher": {"description": "Publisher of the app", "required": True},
         "version": {"description": "The version of the app", "required": True},
         "installer_type": {
-            "description": "The Installer type, i.e. exe, msi, msix, inno, nullsoft",
+            "description": "The Installer type. Supported types are inno, wix, msi, nullsoft, zip, appx, msix and exe.",
             "required": True,
         },
         "installers": {
@@ -157,16 +157,30 @@ class WingetManifestGenerator(Processor):
         manifest_template["Name"] = self.env.get("application_name", "")
         manifest_template["Publisher"] = self.env.get("publisher", "")
         manifest_template["License"] = self.env.get("license_type", "")
+        if self.env.get("license_url", ""):
+            manifest_template["LicenseUrl"] = self.env.get("license_url", "")
         if self.env.get("app_moniker", ""):
             manifest_template["AppMoniker"] = self.env.get("app_moniker", "")
+        if self.env.get("tags", ""):
+            manifest_template["Tags"] = self.env.get("tags", "")
+        manifest_template["InstallerType"] = self.env.get("installer_type", "")
         manifest_template["Installers"] = []
         for installer in self.env.get("installers", []):
-            manifest_template["Installers"].append(
-                {
-                    "Arch": installer.get("architecture", ""),
-                    "Url": installer.get("download_url", ""),
-                }
-            )
+            installer_metadata = {
+                "Arch": installer.get("architecture", ""),
+                "Url": installer.get("download_url", ""),
+                "Sha256": self.generate_sha256_of_file(
+                    self.env.get("destination_path", "")
+                ),
+            }
+            if installer.get("language", ""):
+                installer_metadata["Language"] = self.env.get("language", "")
+            if installer.get("switches", {}):
+                installer_metadata["Switches"] = installer.get("switches", {})
+            if installer.get("scope", ""):
+                installer_metadata["Scope"] = installer.get("scope", "")
+
+            manifest_template["Installers"].append(installer_metadata)
         # ensure manifest output path exists before dumping YAML
         self.make_directory(path=self.env.get("manifest_output_path", ""))
         full_output_path = os.path.join(
