@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads latest Firefox x64 executable for Windows and adds to generates a winget manifest</string>
+    <key>Identifier</key>
+    <string>com.github.jbaker10.winget.Firefox-Win64</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>Firefox</string>
+        <key>PUBLISHER</key>
+        <string>Mozilla</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.4.0</string>
+    <key>ParentRecipe</key>
+    <string>com.github.hansen-m.download.Firefox64-Win</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>destination_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%-%version%.exe</string>
+                <key>overwrite</key>
+                <string>true</string>
+                <key>source_path</key>
+                <string>%pathname%</string>
+            </dict>
+            <key>Processor</key>
+            <string>Copier</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>com.github.jbaker10.WingetManifestGenerator/WingetManifestGenerator</string>
+            <key>Arguments</key>
+            <dict>
+                <key>manifest_output_path</key>
+                <string>/Users/Shared/winget/manifests/%PUBLISHER%/%NAME%</string>
+                <key>manifest_output_filename</key>
+                <string>%version%.yaml</string>
+                <key>application_name</key>
+                <string>%NAME%</string>
+                <key>package_id</key>
+                <string>%PUBLISHER%.%NAME%</string>
+                <key>publisher</key>
+                <string>%PUBLISHER%</string>
+                <key>version</key>
+                <string>%version%</string>
+                <key>license_type</key>
+                <string>Mozilla Public License Version 2.0</string>
+                <key>license_url</key>
+                <string>https://www.mozilla.org/en-US/MPL/2.0/</string>
+                <key>description</key>
+                <string>Mozilla Firefox is free and open source software, built by a community of thousands from all over the world.</string>
+                <key>homepage</key>
+                <string>https://www.mozilla.org/en-US/firefox/new/</string>
+                <key>tags</key>
+                <string>Browser, Mozilla, Firefox</string>
+                <key>installer_type</key>
+                <string>exe</string>
+                <key>app_moniker</key>
+                <string>chrome</string>
+                <key>installers</key>
+                <array>
+                    <dict>
+                        <key>architecture</key>
+                        <string>x64</string>
+                        <key>download_url</key>
+                        <string>%DOWNLOAD_URL%</string>
+                    </dict>
+                </array>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>
