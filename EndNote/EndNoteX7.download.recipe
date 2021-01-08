@@ -11,7 +11,7 @@
     <key>NAME</key>
     <string>EndNote_X7</string>
     <key>DOWNLOAD_URL</key>
-    <string>http://download.endnote.com/downloads/X7/EndNoteX7Installer.dmg</string>
+    <string>https://download.endnote.com/downloads/X7/EndNoteX7Installer.dmg</string>
   </dict>
   <key>MinimumVersion</key>
   <string>0.6.1</string>
