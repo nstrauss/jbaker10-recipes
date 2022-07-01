@@ -21,7 +21,7 @@
             <key>description</key>
             <string>osquery allows you to easily ask questions about your Linux and OSX infrastructure. Whether your goal is intrusion detection, infrastructure reliability, or compliance, osquery gives you the ability to empower and inform a broad set of organizations within your company.</string>
             <key>developer</key>
-            <string>Facebook</string>
+            <string>osquery</string>
             <key>name</key>
             <string>%NAME%</string>
             <key>unattended_install</key>
